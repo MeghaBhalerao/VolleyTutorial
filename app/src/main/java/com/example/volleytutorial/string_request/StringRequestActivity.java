@@ -10,12 +10,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.volleytutorial.Constants;
 import com.example.volleytutorial.R;
 
 public class StringRequestActivity extends AppCompatActivity
 {
 
-    String server_url = "http://192.168.0.8/demo/volley_tutorial.php";
+    String server_url = Constants.volleyTutorial;
     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState)

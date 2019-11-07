@@ -3,6 +3,7 @@
     package="com.example.volleytutorial">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,14 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".string_request.SettingUpRequestQueueActivity"></activity>
-        <activity android:name=".string_request.StringRequestActivity">
+        <activity android:name=".json_as_input_param.JsonAsInputParamActivity"></activity>
+        <activity android:name=".upload_image_toserver.UploadImageOnServerActivity" />
+        <activity android:name=".send_data_toserver.SendDataToServerActivity" />
+        <activity android:name=".json_array_request.JsonArrayRequestActivity" />
+        <activity android:name=".json_object_request.JsonObjectRequestActivity" />
+        <activity android:name=".image_request.ImageRequestActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".string_request.SettingUpRequestQueueActivity" />
+        <activity android:name=".string_request.StringRequestActivity" />
     </application>
 
 </manifest>

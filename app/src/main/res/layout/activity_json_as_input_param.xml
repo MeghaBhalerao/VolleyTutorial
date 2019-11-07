@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20pt"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".send_data_toserver.SendDataToServerActivity">
+
+    <EditText
+        android:id="@+id/name_et"
+        android:hint="Name"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:id="@+id/email_et"
+        android:hint="Email"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="6pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:id="@+id/mobile_et"
+        android:hint="Mobile"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:layout_marginTop="6pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:layout_marginTop="6pt"
+        android:text="Submit"
+        android:onClick="sendDataToServer"
+        android:layout_height="wrap_content">
+
+    </Button>
+</LinearLayout>

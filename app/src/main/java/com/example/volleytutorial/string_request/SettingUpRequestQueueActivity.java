@@ -7,19 +7,25 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.Cache;
+import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.volleytutorial.Constants;
+import com.example.volleytutorial.Mysingleton;
 import com.example.volleytutorial.R;
 
 public class SettingUpRequestQueueActivity extends AppCompatActivity {
 
-    String server_url = "http://192.168.0.8/demo/volley_tutorial.php";
+    String server_url = Constants.volleyTutorial;
     TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +34,31 @@ public class SettingUpRequestQueueActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.textView);
 
+        //disk base cache support class provide cashing
         Cache cache = new DiskBasedCache(getCacheDir(),1024*1024);
+        //basic Network class provide network transactions
+        Network network = new BasicNetwork(new HurlStack());
+        //now we initialise request queue
+        //requestQueue = new RequestQueue(cache,network);
+       // requestQueue.start();
     }
     public void getResponseFromServer(View view) {
-
-        final RequestQueue requestQueue = Volley.newRequestQueue(SettingUpRequestQueueActivity.this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         textView.setText(response);
-                        requestQueue.stop();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         textView.setText(error.toString());
-                        requestQueue.stop();
+                        error.printStackTrace();
+
                     }
                 });
-        requestQueue.add(stringRequest);
+        Mysingleton.getInstance(SettingUpRequestQueueActivity.this).addToRequestQueue(stringRequest);
     }
 }

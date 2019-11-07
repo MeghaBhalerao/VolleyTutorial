@@ -5,21 +5,56 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".string_request.StringRequestActivity">
+    android:layout_margin="15pt"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Server Response" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:textAllCaps="false"
-        android:layout_marginTop="15pt"
-        android:onClick="getResponseFromServer"
+        android:onClick="openStringRequestActivity"
         android:layout_height="wrap_content"
-        android:text="Get Server Response" />
+        android:text="Open String Request Activity" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="penSettingUpRequestQueueActivity"
+        android:layout_height="wrap_content"
+        android:text="Open Setting Up Request Queue Activity" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="requestAnImage"
+        android:layout_height="wrap_content"
+        android:text="Request An Image" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="jsonObjectRequest"
+        android:layout_height="wrap_content"
+        android:text="Json object Request" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="jsonArrayRequest"
+        android:layout_height="wrap_content"
+        android:text="Json Array Request" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="sendDataToServer"
+        android:layout_height="wrap_content"
+        android:text="Send Data To Server" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="uploadImageOnServer"
+        android:layout_height="wrap_content"
+        android:text="Upload Image On Server" />
+    <Button
+        android:layout_width="fill_parent"
+        android:textAllCaps="false"
+        android:onClick="jsonAsInputParam"
+        android:layout_height="wrap_content"
+        android:text="Json As Input Param" />
 </LinearLayout>
